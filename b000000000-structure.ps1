@@ -11,6 +11,7 @@
 
 #>
 
+<<<<<<< HEAD
 [String]$personneNom = "Alice"
 [Int]$personneAge = 35
 
@@ -29,3 +30,9 @@ for ($i = 0; $i -le $villes.Count; $i = $i + 1) {
 }
 
 "{0}" -F ($villes.Count % 2)
+=======
+$personneNom = "Alice"
+$personneAge = 35
+
+Write-Host "Bonjour $personneNom, tu as $personneAge ans. "
+>>>>>>> dc42bfb41c56e4355c6e92df7fdb675e2b7a2fdf
