@@ -12,14 +12,21 @@
 #>
 
 # Definition de la fonction
-function Stagiaire {   param (
+function Stagiaire {   [CmdletBinding()]
+        param (
+        [Parameter(Mandatory=$true)]
         [String]$personneNom,
+
+        [Parameter(Mandatory=$true)]
+        [ValidateRange(1,44)]
         [Int]$personneAge
     )
 # message de bienvenue 
-    "Bonjour {0} ! Tu as {1} ans." -F $personneNom, $personneAge
+    BEGIN {Write-Verbose "Début du script"}
+    PROCESS { "Bonjour {0} ! Tu as {1} ans." -F $personneNom, $personneAge }
+    END {Write-Verbose "Fin du script"}
 }
 
 # Appel de la fonction
-Stagiaire Toronto 35 ans
+Stagiaire Toronto 35 
 Stagiaire "Pascal Siakam" 26  -verbose
